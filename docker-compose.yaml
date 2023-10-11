@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  debians:
+    name: debians
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.16.0.0/24
+         gateway: 172.16.0.1
+
+services:
+  debian1:
+    image: debian:latest
+    command: tail -f /dev/null
+    container_name: debian_container_1
+    networks:
+      - debians
+    volumes:
+      - ./prueba/:/home/
+  debian2:
+    image: debian:latest
+    command: tail -f /dev/null
+    container_name: debian_container_2
+    networks:
+      - debians
+    volumes:
+      - ./prueba/:/home/
