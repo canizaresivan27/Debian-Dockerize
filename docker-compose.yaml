@@ -17,7 +17,7 @@ services:
     networks:
       - debians
     volumes:
-      - ./prueba/:/home/
+      - ./volumen/:/home/
   debian2:
     image: debian:latest
     command: tail -f /dev/null
@@ -25,4 +25,4 @@ services:
     networks:
       - debians
     volumes:
-      - ./prueba/:/home/
+      - ./volumen/:/home/
